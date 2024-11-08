@@ -1,0 +1,297 @@
+<div class="neo-widget widget--widget-email DEWA-widget-body-container email-widget">
+
+
+    <div class="neo-widget__header aoc-home widget-header hide">
+        <img class="widget-logo" src="{{widgetHostedURLDEWA}}widget-email/images/logo.png" alt="DEWA" title="DEWA" />
+        <div class="crm-min-max-btn">
+            <p class="crm-maxbtn" ng-click="btnWebEmailMaximizeCRM();"><img src="{{widgetHostedURLDEWA}}widget-email/images/crm-maximize-icon.png" alt="Maximize" title="Maximize" />Maximize</p>
+            <p class="crm-minbtn hide" ng-click="btnWebEmailMinimizeCRM(this);"><img src="{{widgetHostedURLDEWA}}widget-email/images/crm-minimize-icon.png" alt="Minimize" title="Minimize" />Minimize</p>
+        </div>
+    </div>
+
+    <div class="neo-widget__content neo-widget__content--indented widget-body" style="padding: 0px;">
+        <div class="widget-body-container">
+            <div class="crm-widget-iframe-container hide">
+                <iframe class="crm-widget-iframe" width="500" height="200" id="ifameCRMURL"  name="cs_{{iframeName}}"></iframe>
+            </div>
+
+            <div class="Dewa-widget-popup-report-container DEWA-NoPop-Container">
+                <div class="widget-popup-report-inner-container">
+                    <div class="widget-report-header">
+
+                        <img class="widget-header-icon" src="{{widgetHostedURLDEWA}}widget-email/images/email-icon.png" alt="" title="" />
+                        <h3 class="widget-h3-head">{{objInteraction.originatingAddress}}</h3>
+                        <div class="widget-notfication-icon">
+                            <img src="{{widgetHostedURLDEWA}}widget-email/images/notify-bell-icon.png" alt="" title="" />
+                            <span class="widget-notfiy-icon-count">!</span>
+                            <div class="widget-notfiy-icon-msg notification-top">
+                                <h4 class="attribute-head">{{objInteraction.originatingAddress}}</h4>
+                                <table class="widget-report-table-container widget-table1">
+                                    <thead>
+                                        <tr>
+                                            <th>{{lang[widgetLanguage].LABELCSNotificationKey}}</th>
+                                            <th>{{lang[widgetLanguage].LABELCSNotificationValue}}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbodyCsNotificationHeader">
+                                        <tr ng-repeat="(key, value)  in objCsNotification">
+                                            <td>{{key}}</td>
+                                            <td>{{value}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <img class="widget-min-btn hide" src="{{widgetHostedURLDEWA}}widget-email/images/tab-minimize-icon.png" alt="" title="" ng-click="btnMinimizeCustomPanel(this);" />
+                    </div>
+
+                    <label id="lblStatus" style="width: 94%; display:none; text-align: center; color: red; font-size:20px;"></label>
+
+
+                    <div class="widget-report-body clear-float">
+                        <div class="widget-report-body-left">
+                            <div class="widget-report-tab-container" id="WebEmailWidgetReportTab__{{interactionID}}">
+
+                                <ul class="widget-report-tab-header">
+
+                                    <li id="tabEnableContactSearch" class="widget-tab-switcher" data-tab-index="3" tabindex="0">
+                                        {{lang[widgetLanguage].LABELContactSearch}}<!--Enable Contact Search-->
+                                    </li>
+                                    <li id="tabRecentCallNotes" class="widget-tab-switcher" data-tab-index="4" tabindex="0">
+                                        {{lang[widgetLanguage].LABELRecentCallNotes}} <!--Recent Call Notes-->
+                                    </li>
+                                </ul>
+
+                                <div id="ReportTabBody_{{interactionID}}" class="widget-report-tab-body">
+
+                                    <div class="widget-tab-container" data-tab-index="3">
+                                        <div class="DEWA-report-iframe-container">
+                                            <!-- <iframe class="DEWA-report-iframe" id="iframeContactSearch"></iframe> -->
+                                            <object class="DEWA-report-iframe" id="iframeContactSearch" ></object>
+                                        </div>
+                                    </div>
+
+                                    <!--Recent Call Notes -->
+                                    <div class="widget-tab-container widget-tabcontainer-active" data-tab-index="4">
+
+                                        <ul class="report-filter filter-row">
+                                            <li>
+                                                <div class="label-field"><label>{{lang[widgetLanguage].LABELCRecentSearchType}}</label></div>
+                                                <!--<div class="input-field"><input type="text" id="recentSearchEmail" ng-model="recentSearchEmail" class="DEWA-input-text" /></div>-->
+
+                                                <div class="input-field">
+                                                    <select name="cboRecentSearch"
+                                                            id="cboRecentSearch"
+                                                            ng-model="cboRecentSearchSelected" class="DEWA-input-select">
+                                                        <option ng-repeat="searchItem in recentCallNoteSearch[widgetLanguage]"
+                                                                value="{{searchItem.Key}}" ng-selected="cboRecentSearchSelected == searchItem.Key">
+                                                            {{searchItem.Label}}
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="label-field"><label>{{lang[widgetLanguage].LABELCRecentSearchValue}}</label></div>
+                                                <div class="input-field"><input type="text" id="recentSearchValue" ng-model="recentSearchEmail" class="DEWA-input-text" /></div>
+
+                                            </li>
+
+                                            <li>
+                                                <div class="label-field">
+                                                    <label>{{lang[widgetLanguage].LABELReasons}}</label>
+                                                </div>
+                                                <div class="input-field">
+                                                    <div class="DEWA-singlselect" id="recent_reasons_dropdownselect">
+                                                        <input type="text" class="DEWA-input-single-select singleselectbtn"
+                                                            placeholder="Select" readonly required />
+                                                        <i class="clearinput">X</i>
+                                                        <ul class="singlselect-dropdown dropdown-position-bottom" id="recent_reasons_dropdown">
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="label-field">
+                                                    <label>{{lang[widgetLanguage].LABELOutcome}}</label>
+                                                </div>
+                                                <div class="input-field">
+                                                    <div class="DEWA-singlselect" id="recent_outcome_dropdownselect">
+                                                        <input type="text" class="DEWA-input-single-select singleselectbtn"
+                                                            placeholder="Select" readonly required />
+                                                        <i class="clearinput">X</i>
+                                                        <ul class="singlselect-dropdown dropdown-position-bottom" id="recent_outcome_dropdown">
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li style="width: 180px;">
+
+                                                <div class="input-field" style="padding-right: 10px;"><button class="DEWA-input-btn green-btn" ng-click="recentSearch_Click()">{{lang[widgetLanguage].BUTTONRecentSearch}}</button></div>
+                                                <div class="input-field"><button class="DEWA-input-btn blue-btn" ng-click="recentRefresh_Click()">{{lang[widgetLanguage].BUTTONRecentRefresh}}</button></div>
+                                            </li>
+                                        </ul>
+
+                                        <div class="widget-report-container" style="height: calc(100% - 33px);">
+
+                                            <div class="widget-report-inner-container" style="overflow: visible;">
+                                                <table class="widget-report-table-container widget-table2">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Date Time</th>
+                                                            <th class="hide" >Agent ID</th>
+                                                            <th>Agent Name</th>
+                                                            <th>Category</th>
+                                                            <th>Reason</th>
+                                                            <th>Outcome</th>
+                                                            <th>Notes</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="tBodyCallNote">
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="widget-report-body-right">
+                            <div class="DEWA-callnotes-container email-widget-callnotes">
+                                <div class="DEWA-callaction-head">
+                                    <h4 class="DEWA-h4-head1">{{lang[widgetLanguage].LABELCallAction}}</h4>
+                                </div>
+
+                                <h4 class="DEWA-h4-head2">{{lang[widgetLanguage].LABELDisposition}}</h4>
+
+                                <div class="DEWA-form-container-body" id="dvDispositionBody" style="height: calc(100% - 87px);">
+                                    <ul class="DEWA-form-container " style="height: calc(100% - 37px);">
+                                        <li>
+                                            <div class="input-group">
+                                                <div class="label-field">
+                                                    <label>{{lang[widgetLanguage].LABELCategory}}:</label>
+                                                </div>
+                                                <div class="input-field">
+
+                                                    <div class="DEWA-singlselect disabled" id="DEWA_category_dropdownselect">
+                                                        <input type="text" class="DEWA-input-single-select singleselectbtn" readonly required />
+                                                        <i class="clearinput hide">X</i>
+
+                                                        <ul class="singlselect-dropdown" id="DEWA_category_dropdown">
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="input-group">
+                                                <div class="label-field">
+                                                    <label>{{lang[widgetLanguage].LABELReasons}}:</label>
+                                                </div>
+                                                <div class="input-field">
+
+                                                    <div class="DEWA-singlselect" id="DEWA_reasons_dropdownselect">
+                                                        <input type="text" class="DEWA-input-single-select singleselectbtn" placeholder="Select" readonly required />
+                                                        <i class="clearinput hide">X</i>
+
+                                                        <ul class="singlselect-dropdown dropdown-position-bottom" id="DEWA_reasons_dropdown">
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="input-group">
+                                                <div class="label-field">
+                                                    <label>{{lang[widgetLanguage].LABELOutcome}}:</label>
+                                                </div>
+                                                <div class="input-field">
+                                                    <!--<select class="DEWA-input-select" id="cboOutcome" ng-model="cboOutcome"> </select>-->
+                                                    <div class="DEWA-singlselect" id="DEWA_outcome_dropdownselect">
+                                                        <input type="text" class="DEWA-input-single-select singleselectbtn" placeholder="Select" readonly required />
+                                                        <i class="clearinput hide">X</i>
+
+                                                        <ul class="singlselect-dropdown" id="DEWA_outcome_dropdown">
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li style="height: calc(100% - 111px);">
+                                            <div class="input-group notes-field" style="height: calc(100%);">
+                                                <div class="label-field">
+                                                    <label>{{lang[widgetLanguage].LABELNotes}}</label>
+                                                </div>
+                                                <div class="input-field" style="height: calc(100% - 21px);">
+                                                    <textarea class="DEWA-input-textarea" id="txtRecentCallNotes" ng-model="txtRecentCallNotes" style="height: calc(100%);"></textarea>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="DEWA-btn-container">
+                                        <button class="DEWA-input-btn green-lite-btn" id="saveRecentCallNotes" ng-click="saveRecentCallNotes_Click(scope)">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="Dewa-widget-minimize-report-container active-minimize hide">
+        <div class="widget-report-minimize" ng-click="btnMaximizeCustomPanel(this);">
+            <img class="widget-channel-icon" src="{{widgetHostedURLDEWA}}widget-email/images/email-icon.png" alt="" title="" />
+            <h3 class="widget-h3-head">{{objInteraction.originatingAddress}}</h3>
+            <div class="widget-notfication-icon">
+                <img src="{{widgetHostedURLDEWA}}widget-email/images/notify-bell-icon.png" alt="" title="" />
+                <span class="widget-notfiy-icon-count">!</span>
+                <div class="widget-notfiy-icon-msg notification-bottom">
+                    <h4 class="attribute-head">{{objInteraction.originatingAddress}}</h4>
+                    <table class="widget-report-table-container widget-table1">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyCsNotificationFooter">
+                            <tr ng-repeat="(key, value)  in objCsNotification">
+                                <td>{{ key }}</td>
+                                <td>{{ value }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <img class="widget-max-btn" src="{{widgetHostedURLDEWA}}widget-email/images/tab-maximize-icon.png" alt="" title="" />
+        </div>
+    </div>
+
+    <div class="popup-body-container message-popup-container hide" style="z-index: 99999999">
+        <div class="popup-container">
+            <div class="popup-header">
+                <h4 class="message-popup-head" id="message-popup-head">Already Exists</h4><i class="close-pop-btn hide">X</i>
+            </div>
+            <div class="popup-body" style="min-height: 80px;">
+                <p class="popupmessage" id="message-popup-content"></p>
+            </div>
+            <div class="popup-footer">
+                <ul class="popup-btn-container">
+                    <li class="pull-right"><button class="DEWA-input-btn green-btn " id="btnCancelMessagePopup" ng-click="btnCancelMessagePopup_click()">Close</button></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>

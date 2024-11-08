@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "name": "Widget Home Dashboard",
+    "description": "Widget Home Dashboard",
+    "tags": "widget, DEWA, Dashboard",
+    "library": "widget-home-dashboard",
+    "version": "1.0.0",
+    "date": "2021-04-22T07:21:43.727Z",
+    "id": "47ec6ddf-2581-43c1-b2d4-7bf993188939"
+  },
+  "configuration": {
+    "external": true,
+    "timeout": 5000,
+    "serie": true,
+    "name": "47ec6ddf-2581-43c1-b2d4-7bf993188939",
+    "element": "<widget-home-dashboard></widget-home-dashboard>",
+    "icon": "aoc-home",
+    "files": ["widget-home-dashboard/widget-home-dashboard.css", "widget-home-dashboard/widget-home-dashboard.js"]
+  }
+}

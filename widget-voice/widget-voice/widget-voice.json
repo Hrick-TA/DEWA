@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "name": "Widget Voice",
+    "description": "DEWA Voice Custom Widget",
+    "tags": "DEWA, widget, voice",
+    "library": "widget-voice",
+    "version": "1.0.0",
+    "date": "2020-11-02T14:50:48.905Z",
+    "id": "bd912358-5ad4-4c0e-ab8d-20da57521ad5"
+  },
+  "configuration": {
+    "external": true,
+    "timeout": 5000,
+    "serie": true,
+    "name": "bd912358-5ad4-4c0e-ab8d-20da57521ad5",
+    "element": "<widget-voice></widget-voice>",
+    "icon": "aoc-home",
+    "files": [
+      "widget-voice/libs/widget-voice-config.js",
+      "widget-voice/libs/widget-voice-custom.js",
+	  "widget-voice/libs/alasql.min.js",
+      "widget-voice/widget-voice.css",
+      "widget-voice/widget-voice.js"
+
+    ]
+  }
+}

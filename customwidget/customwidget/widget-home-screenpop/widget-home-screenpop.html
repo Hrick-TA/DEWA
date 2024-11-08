@@ -1,0 +1,50 @@
+<div class="neo-widget widget--widget-home-screenpop">
+
+    <!--<div class="neo-widget__header aoc-home">Widget Home Screenpop</div>-->
+    <div class="neo-widget__header aoc-home widget-header">
+        <h3 class="CRM-widget-head">CRM Widget</h3>
+        <div class="crm-min-max-btn">
+            <p class="crm-maxbtn" ng-click="btnCRMMaximize();"><img src="{{widgetHostedURLHomeScreenpop}}widget-home-screenpop/images/crm-maximize-icon.png" alt="Maximize" title="Maximize" />Maximize</p>
+            <p class="crm-minbtn hide" ng-click="btnCRMMinimize(this);"><img src="{{widgetHostedURLHomeScreenpop}}widget-home-screenpop/images/crm-minimize-icon.png" alt="Minimize" title="Minimize" />Minimize</p>
+        </div>
+    </div>
+
+    <div class="neo-widget__content neo-widget__content--indented" style="padding: 0px;">
+
+        <div class="widget-home-screenpop-tab-container">
+            <div class="widget-home-screenpop-tab-header-container ">
+                <span class="tab-nav-btn tab-prev-btn ">Previous</span>
+                <span class="tab-nav-btn tab-next-btn">Next</span>
+                <ul class="widget-home-screenpop-tab-header" id="tabheadcontent">
+                </ul>
+            </div>
+            <div class="widget-home-screenpop-tab-body">
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="popup-body-container  hide" id="DEWA-home-message-popup" style="z-index: 99999999">
+        <div class="popup-container">
+            <div class="popup-header">
+                <h4 class="message-popup-head" id="message-popup-head">Title</h4><i class="close-pop-btn hide">X</i>
+            </div>
+            <div class="popup-body" style="min-height: 80px;">
+                <p class="popupmessage" id="message-popup-content">MSG</p>
+            </div>
+            <div class="popup-footer">
+                <ul class="popup-btn-container">
+                    <li class="pull-right">
+                        <button class="DEWA-input-btn green-btn " id="btnCancelMessagePopup" ng-click="btnOkMessagePopup_click()">Proceed</button>
+                    </li>
+                    <li class="pull-right">
+                        <button class="DEWA-input-btn red-btn " id="btnCancelMessagePopup" ng-click="btnCancelMessagePopup_click()">Cancel</button>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>

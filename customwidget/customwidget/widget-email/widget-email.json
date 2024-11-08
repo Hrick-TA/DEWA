@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "name": "Widget Email",
+    "description": "DEWA Custom Email Widget",
+    "tags": "DEWA, Custom, Email, Widget",
+    "library": "widget-email",
+    "version": "1.0.0",
+    "date": "2020-12-22T08:21:36.043Z",
+    "id": "698b5f1c-1d45-457e-90de-805167fce90e"
+  },
+  "configuration": {
+    "external": true,
+    "timeout": 5000,
+    "serie": true,
+    "name": "698b5f1c-1d45-457e-90de-805167fce90e",
+    "element": "<widget-email></widget-email>",
+    "icon": "aoc-email",
+    "files": [
+      "widget-email/libs/widget-email-config.js",
+      "widget-email/libs/widget-email-custom.js",
+      "widget-email/widget-email.css",
+      "widget-email/widget-email.js"
+    ]
+  }
+}

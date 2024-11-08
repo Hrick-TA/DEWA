@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "name": "Widget Screen Recorder",
+    "description": "dewa Screen Recorder",
+    "tags": "dewa, widget, Screen, Recorder",
+    "library": "widget-screen-recorder",
+    "version": "1.0.0",
+    "date": "2021-02-09T09:32:26.002Z",
+    "id": "e0503d56-8179-4125-9426-aa74464e12ac"
+  },
+  "configuration": {
+    "external": true,
+    "timeout": 5000,
+    "serie": true,
+    "name": "e0503d56-8179-4125-9426-aa74464e12ac",
+    "element": "<widget-screen-recorder></widget-screen-recorder>",
+    "icon": "aoc-home",
+    "files": [
+      "widget-screen-recorder/libs/widget-screen-recorder-config.js",
+      "widget-screen-recorder/libs/widget-screen-recorder-custom.js",
+      "widget-screen-recorder/widget-screen-recorder.css",
+      "widget-screen-recorder/widget-screen-recorder.js"
+    ]
+  }
+}

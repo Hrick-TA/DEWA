@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "name": "Widget Chat",
+    "description": "DEWA Custom Chat Widget",
+    "tags": "Custom, Chat, Widget. DEWA",
+    "library": "widget-chat",
+    "version": "1.0.0",
+    "date": "2020-12-18T05:07:21.824Z",
+    "id": "15c56d17-7c6e-4d61-8d04-b50c6ff72bfb"
+  },
+  "configuration": {
+    "external": true,
+    "timeout": 5000,
+    "serie": true,
+    "name": "15c56d17-7c6e-4d61-8d04-b50c6ff72bfb",
+    "element": "<widget-chat></widget-chat>",
+    "icon": "aoc-home",
+    "files": [
+      "widget-chat/libs/widget-chat-config.js",
+      "widget-chat/libs/widget-chat-custom.js",
+      "widget-chat/widget-chat.css",
+      "widget-chat/widget-chat.js"
+    ]
+  }
+}
