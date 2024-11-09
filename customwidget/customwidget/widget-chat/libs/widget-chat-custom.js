@@ -696,6 +696,7 @@ function InitWebChatMethodsInsideScopeDEWA(scope) {
             "outcome_id": scope.recentoutcomeID == undefined ? '' : scope.recentoutcomeID,
         });
 
+        // testing for the git and github
         //New Requirement
         var wsReqJson = JSON.stringify({
             "serviceName": "SearchCallNotes_NonVoice_webchat'",
